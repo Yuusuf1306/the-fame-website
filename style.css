@@ -1,0 +1,67 @@
+
+:root{
+  --bg:#07111f; --panel:#0d1b2d; --gold:#f2b84b; --blue:#1ca7ff;
+  --text:#f5f7fb; --muted:#aab7c7; --line:rgba(255,255,255,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+.brand img{width:48px;height:48px;object-fit:contain;border-radius:10px}
+.brand span{font-size:1.2rem}
+nav{display:flex;gap:24px;align-items:center}
+nav a{color:#dbe4ef;font-size:.95rem}
+nav a:hover,nav a.active{color:var(--gold)}
+.menu{display:none;background:none;border:0;color:white;font-size:1.7rem}
+.hero{min-height:620px;display:grid;place-items:center;background:
+ radial-gradient(circle at 80% 20%,rgba(28,167,255,.18),transparent 30%),
+ radial-gradient(circle at 15% 70%,rgba(242,184,75,.12),transparent 30%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;padding:80px 0}
+.kicker{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:.8rem}
+h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:12px 0 20px}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin-bottom:14px}
+h3{margin-bottom:8px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:650px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 20px;border-radius:9px;font-weight:800}
+.btn-primary{background:var(--gold);color:#111}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-outline{border:1px solid rgba(242,184,75,.55);color:var(--gold)}
+.hero-card{background:linear-gradient(145deg,#10243b,#091522);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 20px 70px rgba(0,0,0,.3)}
+.hero-card img{width:100%;max-height:330px;object-fit:contain;border-radius:14px}
+section{padding:80px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:16px}
+.icon{font-size:2rem;margin-bottom:12px}
+.card p{color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.product-img{height:170px;display:grid;place-items:center;background:#101f31;font-size:4rem}
+.product-body{padding:20px}
+.price{color:var(--gold);font-weight:900;font-size:1.15rem;margin:8px 0 15px}
+.banner{background:linear-gradient(100deg,#0d2941,#101a29);border:1px solid var(--line);border-radius:20px;padding:38px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.page-hero{padding:90px 0 60px;background:radial-gradient(circle at 80% 10%,rgba(28,167,255,.14),transparent 35%)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+form{display:grid;gap:14px}
+input,textarea{width:100%;padding:14px;border-radius:9px;border:1px solid var(--line);background:#091725;color:white;font:inherit}
+textarea{min-height:150px;resize:vertical}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted)}
+.footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.small{font-size:.9rem;color:var(--muted)}
+@media(max-width:800px){
+ nav{display:none;position:absolute;top:74px;left:0;right:0;background:#07111f;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}
+ nav.open{display:flex}.menu{display:block}
+ .hero-grid,.contact-grid{grid-template-columns:1fr}
+ .grid,.products{grid-template-columns:1fr 1fr}
+ .hero{min-height:auto}.hero-grid{padding:60px 0}
+}
+@media(max-width:520px){
+ .grid,.products{grid-template-columns:1fr}
+ .banner,.section-head{align-items:flex-start;flex-direction:column}
+ h1{font-size:2.7rem}
+}
